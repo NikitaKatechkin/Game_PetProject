@@ -6,12 +6,11 @@ set(SOURCES
     ./src/main.cpp
 )
 
-set(CMAKE_DEBUG_POSTFIX -d)
 set(BUILD_SHARED_LIBS OFF)
 
-add_executable(${PROJECT_NAME} ${SOURCES})
-
 add_subdirectory(./ext/SFML)
+
+add_executable(${PROJECT_NAME} ${SOURCES})
 
 target_include_directories(${PROJECT_NAME} 
     PUBLIC ./ext/SFML/include
