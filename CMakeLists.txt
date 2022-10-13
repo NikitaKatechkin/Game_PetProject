@@ -4,13 +4,18 @@ project(Game_PetProject C CXX)
 
 set(SOURCES
     ./src/main.cpp
+    ./src/window/Window.cpp
+)
+
+set(HEADERS
+    ./src/window/Window.h
 )
 
 set(BUILD_SHARED_LIBS OFF)
 
 add_subdirectory(./ext/SFML)
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_include_directories(${PROJECT_NAME} 
     PUBLIC ./ext/SFML/include
