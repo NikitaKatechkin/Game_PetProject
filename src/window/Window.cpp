@@ -101,7 +101,14 @@ void Window::updateInput()
     while (m_renderWindow->pollEvent(m_event))
     {
         if (m_event.type == sf::Event::Closed)
+        {
             close();
+        }
+
+        if (m_event.type == sf::Event::Resized)
+        {
+            resize(sf::Vector2u(m_event.size.width, m_event.size.height));
+        }
         
         if (m_event.type == sf::Event::KeyPressed)
         {
