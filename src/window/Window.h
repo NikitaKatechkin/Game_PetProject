@@ -28,7 +28,10 @@ public:
 
 public:
     void updateInput();
+
+public:
     void updateContext(const WindowContext& context);
+    void refreshWindow();
 
 private:
     sf::RenderWindow* m_renderWindow = nullptr;
@@ -37,5 +40,4 @@ private:
 
 private:
     bool isRenderWindowPtrValid();
-    void refreshWindow();
 };
