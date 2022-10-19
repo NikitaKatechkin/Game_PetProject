@@ -1,9 +1,9 @@
 #include "Window.h"
 
-Window::Window():
-    m_renderWindow(new sf::RenderWindow(sf::VideoMode(200, 400), "SFML works!"))
+Window::Window()
 {
-    
+    updateContext({sf::Vector2u(200, 400), "SFML Window"});
+    refreshWindow();
 }
 
 Window::~Window()
@@ -72,8 +72,8 @@ void Window::resize(const sf::Vector2u& newSize)
         return;
     }
 
-    delete m_renderWindow;
-    m_renderWindow = new sf::RenderWindow(sf::VideoMode(newSize.x, newSize.y), "SFML works!");
+    m_context.size = newSize;
+    refreshWindow();
 }
 
 sf::Vector2u Window::getSize()
@@ -83,7 +83,12 @@ sf::Vector2u Window::getSize()
         return sf::Vector2u();
     }
 
-    return m_renderWindow->getSize();
+    return m_context.size;
+}
+
+WindowContext Window::getContext()
+{
+    return m_context;
 }
 
 void Window::updateInput()
@@ -102,14 +107,30 @@ void Window::updateInput()
         {
             if (m_event.key.code == sf::Keyboard::R)
             {
-                sf::Vector2u oldSize = getSize();
-                resize(sf::Vector2u(oldSize.y, oldSize.x));
+                resize(sf::Vector2u(m_context.size.y, m_context.size.x));
             }
         }
     }
 }
 
+void Window::updateContext(const WindowContext& context)
+{
+    m_context = context;
+}
+
 bool Window::isRenderWindowPtrValid()
 {
     return m_renderWindow != nullptr;
+}
+
+void Window::refreshWindow()
+{
+    if (isRenderWindowPtrValid() == true)
+    {
+        delete m_renderWindow;
+        m_renderWindow = nullptr;
+    }
+
+    m_renderWindow = new sf::RenderWindow(sf::VideoMode(m_context.size.x, m_context.size.y), 
+                                          m_context.title);
 }
