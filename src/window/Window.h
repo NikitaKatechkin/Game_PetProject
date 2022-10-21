@@ -9,7 +9,7 @@ struct WindowContext
 class Window
 {
 public:
-    Window();
+    Window(const WindowContext& context = {sf::Vector2u(200, 400), "SFML Window"});
     ~Window();
 
 public:

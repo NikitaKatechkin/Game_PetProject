@@ -1,8 +1,8 @@
 #include "Window.h"
 
-Window::Window()
+Window::Window(const WindowContext& context)
 {
-    updateContext({sf::Vector2u(200, 400), "SFML Window"});
+    updateContext(context);
     refreshWindow();
 }
 
