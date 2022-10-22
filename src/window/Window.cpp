@@ -65,6 +65,11 @@ void Window::close()
     return m_renderWindow->close();
 }
 
+bool Window::togleWindowContext(bool value)
+{
+    return m_renderWindow->setActive(value);
+}
+
 void Window::resize(const sf::Vector2u& newSize)
 {
     if (!isRenderWindowPtrValid()) 

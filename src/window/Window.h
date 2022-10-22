@@ -1,3 +1,6 @@
+#ifndef WINDOW_H
+#define WINDOW_H
+
 #include <SFML/Graphics.hpp>
 
 struct WindowContext
@@ -22,6 +25,9 @@ public:
     void close();
 
 public:
+    bool togleWindowContext(bool value);
+
+public:
     void resize(const sf::Vector2u& newSize);
     sf::Vector2u getSize();
     WindowContext getContext();
@@ -41,3 +47,5 @@ private:
 private:
     bool isRenderWindowPtrValid();
 };
+
+#endif

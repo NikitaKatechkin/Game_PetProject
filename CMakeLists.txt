@@ -5,10 +5,13 @@ project(Game_PetProject C CXX)
 set(SOURCES
     ./src/main.cpp
     ./src/window/Window.cpp
+
+    ./src/game/Game.cpp
 )
 
 set(HEADERS
     ./src/window/Window.h
+    ./src/game/Game.h
 )
 
 set(BUILD_SHARED_LIBS OFF)
