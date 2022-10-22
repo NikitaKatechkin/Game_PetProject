@@ -27,6 +27,19 @@ void Game::stop()
     m_executionThread.join();
 }
 
+void Game::handleEvents(EventQueue& queue)
+{
+    if (queue.empty() == false)
+    {
+        sf::Event event = queue.front();
+
+        if (event.type == sf::Event::Closed)
+        {
+            m_isRunning = false;
+        }
+    }
+}
+
 void Game::initWindow(const WindowContext& context)
 {
     m_window = new Window(context);
@@ -43,17 +56,13 @@ void Game::run(const WindowContext& context)
 
         // All memebers handle the event
         m_window->handleEvents(eventQueue);
+        this->handleEvents(eventQueue);
 
         // Rendering stuff
 
         m_window->clear();
         //m_window.draw();
         m_window->display();
-
-        if (m_window->isOpen() == false)
-        {
-            m_isRunning = false;
-        }
     }
 
     delete m_window;
