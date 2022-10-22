@@ -15,26 +15,26 @@ Game::~Game()
     }
 }
 
-void Game::Start(const WindowContext& context)
+void Game::start(const WindowContext& context)
 {
     m_isRunning = true;
-    m_executionThread = std::thread(&Game::Run, this, std::ref(context));
+    m_executionThread = std::thread(&Game::run, this, std::ref(context));
 }
 
-void Game::Stop()
+void Game::stop()
 {
     m_isRunning = false;
     m_executionThread.join();
 }
 
-void Game::InitWindow(const WindowContext& context)
+void Game::initWindow(const WindowContext& context)
 {
     m_window = new Window(context);
 }
 
-void Game::Run(const WindowContext& context)
+void Game::run(const WindowContext& context)
 {
-    InitWindow(context);
+    initWindow(context);
 
     while (m_isRunning == true)
     {

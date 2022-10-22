@@ -12,12 +12,12 @@ public:
     ~Game();
 
 public:
-    void Start(const WindowContext& context = {sf::Vector2u(400, 400), "SFML Window"});
-    void Stop();
+    void start(const WindowContext& context = {sf::Vector2u(400, 400), "SFML Window"});
+    void stop();
 
 private:
-    void InitWindow(const WindowContext& context);
-    void Run(const WindowContext& context);
+    void initWindow(const WindowContext& context);
+    void run(const WindowContext& context);
 
 private:
     Window* m_window = nullptr;
