@@ -53,3 +53,14 @@ _deps
 
 #libs
 ext/SFML/*
+
+#assets
+assets/images/Animal/*
+assets/images/Boss/*
+assets/images/Enemy/*
+assets/images/Female/*
+assets/images/Japanese school characters/*
+assets/images/Male/Male *
+assets/images/Other/*
+assets/images/Soldier/*
+assets/images/Xmas/*

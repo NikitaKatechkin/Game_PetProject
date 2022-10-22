@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "../window/Window.h"
+#include "../gameObjects/GameObject.h"
 
 #include <thread>
 
