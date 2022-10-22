@@ -23,7 +23,7 @@ int main()
 
     Game game;
 
-    game.Start({sf::Vector2u(200, 400), "SFML Window"});
+    game.start({sf::Vector2u(200, 400), "SFML Window"});
 
     return 0;
 }
