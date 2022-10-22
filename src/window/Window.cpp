@@ -1,5 +1,7 @@
 #include "Window.h"
 
+#include <iostream>
+
 Window::Window(const WindowContext& context)
 {
     updateContext(context);
@@ -70,6 +72,19 @@ bool Window::togleWindowContext(bool value)
     return m_renderWindow->setActive(value);
 }
 
+EventQueue Window::getEventQueue()
+{
+    sf::Event event;
+    EventQueue eventQueue;
+
+    while (m_renderWindow->pollEvent(event))
+    {
+        eventQueue.push(event);
+    }
+
+    return eventQueue;
+}
+
 void Window::resize(const sf::Vector2u& newSize)
 {
     if (!isRenderWindowPtrValid()) 
@@ -96,28 +111,20 @@ WindowContext Window::getContext()
     return m_context;
 }
 
-void Window::updateInput()
+void Window::handleEvents(EventQueue& queue)
 {
-    if (!isRenderWindowPtrValid()) 
+    if (queue.empty() == false)
     {
-        return;
-    }
+        sf::Event event = queue.front();
 
-    while (m_renderWindow->pollEvent(m_event))
-    {
-        if (m_event.type == sf::Event::Closed)
+        if (event.type == sf::Event::Closed)
         {
             close();
         }
 
-        if (m_event.type == sf::Event::Resized)
+        if (event.type == sf::Event::KeyPressed)
         {
-            resize(sf::Vector2u(m_event.size.width, m_event.size.height));
-        }
-        
-        if (m_event.type == sf::Event::KeyPressed)
-        {
-            if (m_event.key.code == sf::Keyboard::R)
+            if (event.key.code == sf::Keyboard::R)
             {
                 resize(sf::Vector2u(m_context.size.y, m_context.size.x));
             }

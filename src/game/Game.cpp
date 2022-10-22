@@ -1,5 +1,7 @@
 #include "Game.h"
 
+#include <iostream>
+
 Game::Game()
 {
 
@@ -36,7 +38,13 @@ void Game::Run(const WindowContext& context)
 
     while (m_isRunning == true)
     {
-        m_window->updateInput();
+        // Fill the event
+        EventQueue eventQueue = m_window->getEventQueue();
+
+        // All memebers handle the event
+        m_window->handleEvents(eventQueue);
+
+        // Rendering stuff
 
         m_window->clear();
         //m_window.draw();

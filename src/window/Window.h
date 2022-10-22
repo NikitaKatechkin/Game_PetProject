@@ -2,12 +2,15 @@
 #define WINDOW_H
 
 #include <SFML/Graphics.hpp>
+#include <queue>
 
 struct WindowContext
 {
     sf::Vector2u size;
     sf::String title;
 };
+
+using EventQueue = std::queue<sf::Event>;
 
 class Window
 {
@@ -26,6 +29,7 @@ public:
 
 public:
     bool togleWindowContext(bool value);
+    EventQueue getEventQueue();
 
 public:
     void resize(const sf::Vector2u& newSize);
@@ -33,7 +37,7 @@ public:
     WindowContext getContext();
 
 public:
-    void updateInput();
+    void handleEvents(EventQueue& queue);
 
 public:
     void updateContext(const WindowContext& context);
@@ -42,7 +46,10 @@ public:
 private:
     sf::RenderWindow* m_renderWindow = nullptr;
     WindowContext m_context;
-    sf::Event m_event;
+
+    //sf::Event m_event;
+    //EventQueue m_eventQueue;
+    bool m_isQueueCompleted = false;
 
 private:
     bool isRenderWindowPtrValid();
