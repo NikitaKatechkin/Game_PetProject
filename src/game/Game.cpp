@@ -64,10 +64,9 @@ void Game::run(const WindowContext& context)
         this->handleEvents(eventQueue);
 
         // Rendering stuff
-
         m_window->clear();
         
-        player.draw(m_window);
+        m_window->draw(player.getSprite());
 
         m_window->display();
     }
