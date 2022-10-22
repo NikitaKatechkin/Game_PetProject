@@ -4,7 +4,9 @@
 
 Game::Game()
 {
-
+    player.setSize(sf::Vector2u(32, 32));
+    player.setTextureAsset("..\\..\\assets\\images\\Male\\Male_01-1.png");
+    player.update();
 }
 
 Game::~Game()
@@ -48,11 +50,6 @@ void Game::initWindow(const WindowContext& context)
 void Game::run(const WindowContext& context)
 {
     initWindow(context);
-
-    GameObject player;
-    player.setSize(sf::Vector2u(32, 32));
-    player.setTextureAsset("..\\..\\assets\\images\\Male\\Male_01-1.png");
-    player.update();
 
     while (m_isRunning == true)
     {

@@ -27,6 +27,9 @@ private:
 
     std::thread m_executionThread;
     bool m_isRunning = false;
+
+private:
+    GameObject player;
 };
 
 #endif
