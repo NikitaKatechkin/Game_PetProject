@@ -3,6 +3,7 @@
 
 #include "../window/Window.h"
 #include "../gameObjects/GameObject.h"
+#include "../player/Player.h"
 
 #include <thread>
 
@@ -29,7 +30,7 @@ private:
     bool m_isRunning = false;
 
 private:
-    GameObject player;
+    Player player;
 };
 
 #endif

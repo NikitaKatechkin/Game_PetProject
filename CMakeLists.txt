@@ -8,6 +8,7 @@ set(SOURCES
     ./src/game/Game.cpp
     ./src/gameObjects/GameObject.cpp
     ./src/gameObjects/MovableObject.cpp
+    ./src/player/Player.cpp
 )
 
 set(HEADERS
@@ -17,6 +18,7 @@ set(HEADERS
     ./src/gameObjects/GameObject.h
     ./src/gameObjects/MovableObject.h
     ./src/gameObjects/HandlingObject.h
+    ./src/player/Player.h
 )
 
 set(BUILD_SHARED_LIBS OFF)

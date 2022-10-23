@@ -1,5 +1,5 @@
-#ifndef MOVABLEOBJECTS_H
-#define MOVABLEOBJECTS_H
+#ifndef MOVABLEOBJECT_H
+#define MOVABLEOBJECT_H
 
 #include <SFML/Graphics.hpp>
 
@@ -17,8 +17,8 @@ public:
     sf::Vector2f getPosition();
     void setMovableSprite(sf::Sprite* sprite);
 
-protected:
-    sf::Sprite* m_sprite = nullptr;
+private:
+    sf::Sprite* m_spritePtr = nullptr;
 };
 
 #endif
