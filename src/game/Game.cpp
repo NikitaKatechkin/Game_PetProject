@@ -29,7 +29,7 @@ void Game::stop()
     m_executionThread.join();
 }
 
-void Game::handleEvents(EventQueue& queue)
+void Game::handleEvents(EventQueue queue)
 {
     if (queue.empty() == false)
     {
@@ -61,6 +61,7 @@ void Game::run(const WindowContext& context)
         // All memebers handle the event
         m_window->handleEvents(eventQueue);
         this->handleEvents(eventQueue);
+        player.handleEvents(eventQueue);
 
         // Rendering stuff
         m_window->clear();

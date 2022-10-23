@@ -37,7 +37,7 @@ public:
     WindowContext getContext();
 
 public:
-    void handleEvents(EventQueue& queue);
+    void handleEvents(EventQueue queue);
 
 public:
     void updateContext(const WindowContext& context);

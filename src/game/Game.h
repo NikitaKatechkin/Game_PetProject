@@ -17,7 +17,7 @@ public:
     void start(const WindowContext& context = {sf::Vector2u(400, 400), "SFML Window"});
     void stop();
 
-    void handleEvents(EventQueue& queue);
+    void handleEvents(EventQueue queue);
 
 private:
     void initWindow(const WindowContext& context);

@@ -111,7 +111,7 @@ WindowContext Window::getContext()
     return m_context;
 }
 
-void Window::handleEvents(EventQueue& queue)
+void Window::handleEvents(EventQueue queue)
 {
     if (queue.empty() == false)
     {

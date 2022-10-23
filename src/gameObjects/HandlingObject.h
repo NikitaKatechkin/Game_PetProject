@@ -10,7 +10,7 @@ public:
     virtual ~HandlingObject() = default;
 
 public:
-    virtual void handleEvents(EventQueue& queue) = 0;
+    virtual void handleEvents(EventQueue queue) = 0;
 };
 
 #endif

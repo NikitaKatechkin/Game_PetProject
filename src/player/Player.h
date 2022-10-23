@@ -14,7 +14,7 @@ public:
     ~Player() = default;
 
 public:
-    void handleEvents(EventQueue& events) override;
+    void handleEvents(EventQueue queue) override;
 };
 
 #endif
