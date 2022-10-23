@@ -1,12 +1,12 @@
 #ifndef MOVABLEOBJECTS_H
 #define MOVABLEOBJECTS_H
 
-#include "GameObject.h"
+#include <SFML/Graphics.hpp>
 
-class MovableObject : public GameObject
+class MovableObject
 {
 public:
-    MovableObject();
+    MovableObject(sf::Sprite* sprite);
     ~MovableObject() = default;
 
 public:
@@ -15,6 +15,9 @@ public:
 
 public:
     sf::Vector2f getPosition();
+
+protected:
+    sf::Sprite* m_sprite = nullptr;
 };
 
 #endif

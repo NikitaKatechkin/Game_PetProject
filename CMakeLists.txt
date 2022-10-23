@@ -13,8 +13,10 @@ set(SOURCES
 set(HEADERS
     ./src/window/Window.h
     ./src/game/Game.h
+    ./src/DataTypes.h
     ./src/gameObjects/GameObject.h
     ./src/gameObjects/MovableObject.h
+    ./src/gameObjects/HandlingObject.h
 )
 
 set(BUILD_SHARED_LIBS OFF)

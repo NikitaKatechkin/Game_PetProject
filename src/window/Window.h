@@ -4,13 +4,13 @@
 #include <SFML/Graphics.hpp>
 #include <queue>
 
+#include "../DataTypes.h"
+
 struct WindowContext
 {
     sf::Vector2u size;
     sf::String title;
 };
-
-using EventQueue = std::queue<sf::Event>;
 
 class Window
 {
