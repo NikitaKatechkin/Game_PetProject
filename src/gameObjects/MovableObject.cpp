@@ -21,3 +21,8 @@ sf::Vector2f MovableObject::getPosition()
     return m_sprite->getPosition();
 }
 
+void MovableObject::setMovableSprite(sf::Sprite* sprite)
+{
+    m_sprite = sprite;
+}
+

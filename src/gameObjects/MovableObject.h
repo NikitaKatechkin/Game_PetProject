@@ -6,7 +6,7 @@
 class MovableObject
 {
 public:
-    MovableObject(sf::Sprite* sprite);
+    MovableObject(sf::Sprite* sprite = nullptr);
     ~MovableObject() = default;
 
 public:
@@ -15,6 +15,7 @@ public:
 
 public:
     sf::Vector2f getPosition();
+    void setMovableSprite(sf::Sprite* sprite);
 
 protected:
     sf::Sprite* m_sprite = nullptr;
