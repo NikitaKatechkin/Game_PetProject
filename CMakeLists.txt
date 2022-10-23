@@ -7,12 +7,14 @@ set(SOURCES
     ./src/window/Window.cpp
     ./src/game/Game.cpp
     ./src/gameObjects/GameObject.cpp
+    ./src/gameObjects/MovableObject.cpp
 )
 
 set(HEADERS
     ./src/window/Window.h
     ./src/game/Game.h
     ./src/gameObjects/GameObject.h
+    ./src/gameObjects/MovableObject.h
 )
 
 set(BUILD_SHARED_LIBS OFF)

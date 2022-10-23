@@ -31,7 +31,7 @@ public:
     void update();
     void draw(Window* window);
 
-private:
+protected:
     sf::Texture m_texture;
     sf::Sprite m_sprite;
 
