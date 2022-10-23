@@ -51,10 +51,12 @@ void Game::run(const WindowContext& context)
 {
     initWindow(context);
 
+    EventQueue eventQueue;
+
     while (m_isRunning == true)
     {
         // Fill the event
-        EventQueue eventQueue = m_window->getEventQueue();
+        eventQueue = m_window->getEventQueue();
 
         // All memebers handle the event
         m_window->handleEvents(eventQueue);
