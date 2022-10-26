@@ -18,25 +18,25 @@ void Player::handleEvents(EventQueue queue)
             {
             case sf::Keyboard::Right:
             {
-                moveOn(sf::Vector2f(5, 0));
+                moveOn(sf::Vector2f(32, 0));
                 
                 break;
             }
             case sf::Keyboard::Left:
             {
-                moveOn(sf::Vector2f(-5, 0));
+                moveOn(sf::Vector2f(-32, 0));
                 
                 break;
             }
             case sf::Keyboard::Up:
             {
-                moveOn(sf::Vector2f(0, -5));
+                moveOn(sf::Vector2f(0, -32));
                 
                 break;
             }
             case sf::Keyboard::Down:
             {
-                moveOn(sf::Vector2f(0, 5));
+                moveOn(sf::Vector2f(0, 32));
                 
                 break;
             }

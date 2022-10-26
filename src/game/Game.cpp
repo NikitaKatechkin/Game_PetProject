@@ -7,6 +7,8 @@ Game::Game()
     player.setSize(sf::Vector2u(32, 32));
     player.setTextureAsset("..\\..\\assets\\images\\Male\\Male_01-1.png");
     player.update();
+
+    map = Map();
 }
 
 Game::~Game()
@@ -65,7 +67,9 @@ void Game::run(const WindowContext& context)
 
         // Rendering stuff
         m_window->clear();
-        
+
+        map.draw(m_window);
+        map.drawFOV(m_window, player.getPosition());
         m_window->draw(player.getSprite());
 
         m_window->display();

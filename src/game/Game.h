@@ -4,6 +4,7 @@
 #include "../window/Window.h"
 #include "../gameObjects/GameObject.h"
 #include "../player/Player.h"
+#include "../map/Map.h"
 
 #include <thread>
 
@@ -30,6 +31,7 @@ private:
     bool m_isRunning = false;
 
 private:
+    Map map;
     Player player;
 };
 

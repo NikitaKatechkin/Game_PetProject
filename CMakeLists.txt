@@ -9,6 +9,7 @@ set(SOURCES
     ./src/gameObjects/GameObject.cpp
     ./src/gameObjects/MovableObject.cpp
     ./src/player/Player.cpp
+    ./src/map/Map.cpp
 )
 
 set(HEADERS
@@ -19,6 +20,7 @@ set(HEADERS
     ./src/gameObjects/MovableObject.h
     ./src/gameObjects/HandlingObject.h
     ./src/player/Player.h
+    ./src/map/Map.h
 )
 
 set(BUILD_SHARED_LIBS OFF)
