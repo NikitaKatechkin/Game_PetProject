@@ -8,7 +8,7 @@ Game::Game()
     player.setTextureAsset("..\\..\\assets\\images\\Male\\Male_01-1.png");
     player.update();
 
-    map = Map();
+    //map = Map();
 }
 
 Game::~Game()
