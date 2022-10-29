@@ -85,28 +85,16 @@ Map::Map(const std::string& configFilePath)
 
 Map::~Map()
 {
-    if (m_units != nullptr)
-    {
-        delete[] m_units;
-    }
+
 }
 
 void Map::draw(Window* window)
 {
-    //sf::RectangleShape unit(sf::Vector2f(UNIT_WIDTH, UNIT_HEIGHT));
-
     for (unsigned int row = 0; row < m_size.y; row++)
     {
         for (unsigned int col = 0; col < m_size.x; col++)
         {
-            if (m_units == nullptr)
-            {
-                std::cout << "shit" << std::endl;
-            }
             sf::RectangleShape& unit = m_units[row * m_size.x + col];
-
-            //unit.setFillColor(numToColorConverter(((row % 2 == 0) ? col % 7 : 7 - col % 7)));
-            //unit.setPosition(sf::Vector2f(col * UNIT_WIDTH, row * UNIT_HEIGHT));
 
             window->draw(unit);
         }
@@ -157,7 +145,7 @@ void Map::Initialize(const std::string& configFilePath)
     {
         configFileStream >> m_size.x >> m_size.y;
 
-        m_units = new sf::RectangleShape[m_size.x * m_size.y];
+        m_units.resize(m_size.x * m_size.y);
 
         std::string mapRow;
         std::getline(configFileStream, mapRow);

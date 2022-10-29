@@ -4,6 +4,8 @@
 #include <SFML/Graphics.hpp>
 #include "../window/Window.h"
 
+#include <vector>
+
 class Map
 {
 public:
@@ -19,7 +21,8 @@ private:
 
 private:
     sf::Vector2u m_size;
-    sf::RectangleShape* m_units = nullptr;
+    //sf::RectangleShape* m_units = nullptr;
+    std::vector<sf::RectangleShape> m_units;
 };
 
 #endif
