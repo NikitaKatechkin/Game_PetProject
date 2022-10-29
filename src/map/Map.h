@@ -14,7 +14,8 @@ public:
 
 public:
     //void draw(Window* window);
-    void drawFOV(Window* window, const sf::Vector2f& playerPixelPos);
+    //void drawFOV(Window* window, const sf::Vector2f& playerPixelPos);
+    sf::Vector2u getSize();
 
 public:
     std::vector<sf::Drawable*>& getDrawables();

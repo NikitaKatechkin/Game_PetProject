@@ -10,6 +10,7 @@ set(SOURCES
     ./src/gameObjects/MovableObject.cpp
     ./src/player/Player.cpp
     ./src/map/Map.cpp
+    ./src/camera/Camera.cpp
 )
 
 set(HEADERS
@@ -21,6 +22,7 @@ set(HEADERS
     ./src/gameObjects/HandlingObject.h
     ./src/player/Player.h
     ./src/map/Map.h
+    ./src/camera/Camera.h
 )
 
 set(BUILD_SHARED_LIBS OFF)

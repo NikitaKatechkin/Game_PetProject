@@ -103,6 +103,7 @@ void Map::draw(Window* window)
 }
 **/
 
+/**
 void Map::drawFOV(Window* window, const sf::Vector2f& playerPixelPos)
 {
     sf::RectangleShape unit(sf::Vector2f(UNIT_WIDTH, UNIT_HEIGHT));
@@ -137,6 +138,12 @@ void Map::drawFOV(Window* window, const sf::Vector2f& playerPixelPos)
             window->draw(unit);
         }
     }
+}
+**/
+
+sf::Vector2u Map::getSize()
+{
+    return m_size;
 }
 
 std::vector<sf::Drawable*>& Map::getDrawables()

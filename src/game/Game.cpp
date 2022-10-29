@@ -9,6 +9,7 @@ Game::Game()
     player.update();
 
     //map = Map();
+    camera = Camera(map.getSize());
 }
 
 Game::~Game()
@@ -64,12 +65,13 @@ void Game::run(const WindowContext& context)
         m_window->handleEvents(eventQueue);
         this->handleEvents(eventQueue);
         player.handleEvents(eventQueue);
+        camera.updateFOV(player.getPosition());
 
         // Rendering stuff
         m_window->clear();
 
         m_window->draw(map.getDrawables());
-        map.drawFOV(m_window, player.getPosition());
+        m_window->draw(camera.getView());
         m_window->draw(player.getSprite());
 
         m_window->display();

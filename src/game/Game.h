@@ -5,6 +5,7 @@
 #include "../gameObjects/GameObject.h"
 #include "../player/Player.h"
 #include "../map/Map.h"
+#include "../camera/Camera.h"
 
 #include <thread>
 
@@ -33,6 +34,7 @@ private:
 private:
     Map map;
     Player player;
+    Camera camera;
 };
 
 #endif
