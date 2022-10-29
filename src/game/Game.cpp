@@ -68,7 +68,7 @@ void Game::run(const WindowContext& context)
         // Rendering stuff
         m_window->clear();
 
-        map.draw(m_window);
+        m_window->draw(map.getDrawables());
         map.drawFOV(m_window, player.getPosition());
         m_window->draw(player.getSprite());
 

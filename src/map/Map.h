@@ -16,13 +16,16 @@ public:
     void draw(Window* window);
     void drawFOV(Window* window, const sf::Vector2f& playerPixelPos);
 
+public:
+    std::vector<sf::Drawable*>& getDrawables();
+
 private:
     void Initialize(const std::string& configFilePath);
 
 private:
     sf::Vector2u m_size;
     //sf::RectangleShape* m_units = nullptr;
-    std::vector<sf::RectangleShape> m_units;
+    std::vector<sf::Drawable*> m_units;
 };
 
 #endif

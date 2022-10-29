@@ -37,6 +37,20 @@ void Window::draw(const sf::Drawable& drawableObject)
     m_renderWindow->draw(drawableObject);
 }
 
+void Window::draw(const std::vector<sf::Drawable*>& drawableObjects)
+{
+    if (!isRenderWindowPtrValid()) 
+    {
+        return;
+    }
+
+    for (auto& object : drawableObjects)
+    {
+        m_renderWindow->draw(*object);   
+    }
+}
+
+
 void Window::display()
 {
     if (!isRenderWindowPtrValid()) 

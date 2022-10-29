@@ -21,6 +21,7 @@ public:
 public:
     void clear();
     void draw(const sf::Drawable& drawableObject);
+    void draw(const std::vector<sf::Drawable*>& drawableObjects);
     void display();
 
 public:

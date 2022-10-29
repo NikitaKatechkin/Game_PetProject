@@ -94,9 +94,9 @@ void Map::draw(Window* window)
     {
         for (unsigned int col = 0; col < m_size.x; col++)
         {
-            sf::RectangleShape& unit = m_units[row * m_size.x + col];
-
-            window->draw(unit);
+            sf::RectangleShape* unit = reinterpret_cast<sf::RectangleShape*>(m_units[row * m_size.x + col]);
+            
+            window->draw(*unit);
         }
     }
 }
@@ -137,6 +137,11 @@ void Map::drawFOV(Window* window, const sf::Vector2f& playerPixelPos)
     }
 }
 
+std::vector<sf::Drawable*>& Map::getDrawables()
+{
+    return m_units;
+}
+
 void Map::Initialize(const std::string& configFilePath)
 {
     std::ifstream configFileStream(configFilePath);
@@ -144,8 +149,6 @@ void Map::Initialize(const std::string& configFilePath)
     if (configFileStream.is_open() == true)
     {
         configFileStream >> m_size.x >> m_size.y;
-
-        m_units.resize(m_size.x * m_size.y);
 
         std::string mapRow;
         std::getline(configFileStream, mapRow);
@@ -157,18 +160,19 @@ void Map::Initialize(const std::string& configFilePath)
 
             for (unsigned int col = 0; col < m_size.x; col++)
             {
-                sf::RectangleShape& unit = m_units[row * m_size.x + col];
+                m_units.push_back(new sf::RectangleShape());
+                sf::RectangleShape* unit = reinterpret_cast<sf::RectangleShape*>(m_units[row * m_size.x + col]);
 
-                unit.setPosition(sf::Vector2f(col * UNIT_WIDTH, row * UNIT_HEIGHT));
-                unit.setSize(sf::Vector2f(UNIT_WIDTH, UNIT_HEIGHT));
+                unit->setPosition(sf::Vector2f(col * UNIT_WIDTH, row * UNIT_HEIGHT));
+                unit->setSize(sf::Vector2f(UNIT_WIDTH, UNIT_HEIGHT));
 
                 if (mapRow[col] == '#')
                 {
-                    unit.setFillColor(sf::Color::Blue);
+                    unit->setFillColor(sf::Color::Blue);
                 }
                 else
                 {
-                    unit.setFillColor(sf::Color::White);
+                    unit->setFillColor(sf::Color::White);
                 }
             }
         }
