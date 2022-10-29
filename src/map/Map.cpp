@@ -88,6 +88,7 @@ Map::~Map()
 
 }
 
+/**
 void Map::draw(Window* window)
 {
     for (unsigned int row = 0; row < m_size.y; row++)
@@ -100,6 +101,7 @@ void Map::draw(Window* window)
         }
     }
 }
+**/
 
 void Map::drawFOV(Window* window, const sf::Vector2f& playerPixelPos)
 {

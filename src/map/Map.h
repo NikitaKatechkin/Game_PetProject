@@ -13,7 +13,7 @@ public:
     ~Map();
 
 public:
-    void draw(Window* window);
+    //void draw(Window* window);
     void drawFOV(Window* window, const sf::Vector2f& playerPixelPos);
 
 public:
