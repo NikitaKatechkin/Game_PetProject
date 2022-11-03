@@ -1,12 +1,10 @@
 #include "Map.h"
+#include "../constants/GameConstants.h"
 
 #include <iostream>
 #include <fstream>
 #include <array>
 #include <sstream>
-
-static const float UNIT_HEIGHT = 32;
-static const float UNIT_WIDTH = 32;
 
 enum ColorNum
 {

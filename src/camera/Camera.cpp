@@ -1,7 +1,5 @@
 #include "Camera.h"
-
-static const float UNIT_HEIGHT = 32;
-static const float UNIT_WIDTH = 32;
+#include "../constants/GameConstants.h"
 
 Camera::Camera(const sf::Vector2u& mapSize):
     m_mapSize(mapSize)
