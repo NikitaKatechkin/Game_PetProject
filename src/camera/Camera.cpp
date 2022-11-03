@@ -36,18 +36,13 @@ void Camera::blackOut()
     }
 }
 
-void Camera::updateFOV(const sf::Vector2f& playerPixelPos)
+void Camera::updateFOV(const sf::Vector2i& playerUnitPos)
 {
     this->blackOut();
 
     sf::RectangleShape unit(sf::Vector2f(UNIT_WIDTH, UNIT_HEIGHT));
     unit.setFillColor(sf::Color::Green);
-
-    sf::Vector2i playerUnitPos = sf::Vector2i(
-        playerPixelPos.x / UNIT_WIDTH, 
-        playerPixelPos.y / UNIT_HEIGHT
-    );
-
+    
     sf::Vector2i start(
         ((playerUnitPos.x - 1 >= 0) ? playerUnitPos.x - 1 : 0), 
         ((playerUnitPos.y - 1 >= 0) ? playerUnitPos.y - 1 : 0)

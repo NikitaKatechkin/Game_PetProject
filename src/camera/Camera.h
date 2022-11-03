@@ -11,7 +11,7 @@ public:
 
 public:
     void blackOut();
-    void updateFOV(const sf::Vector2f& playerPixelPos);
+    void updateFOV(const sf::Vector2i& playerUnitPos);
 
 public:
     std::vector<sf::Drawable*>& getView();

@@ -4,6 +4,7 @@
 #include "../gameObjects/GameObject.h"
 #include "../gameObjects/MovableObject.h"
 #include "../gameObjects/HandlingObject.h"
+#include "../constants/GameConstants.h"
 
 class Player : public GameObject,
                public MovableObject,
@@ -15,6 +16,7 @@ public:
 
 public:
     void handleEvents(EventQueue queue) override;
+    sf::Vector2i getUnitPosition();
 };
 
 #endif

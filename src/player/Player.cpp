@@ -50,3 +50,9 @@ void Player::handleEvents(EventQueue queue)
         queue.pop();
     }
 }
+
+sf::Vector2i Player::getUnitPosition()
+{
+    sf::Vector2f currentPos = getPosition();
+    return sf::Vector2i(currentPos.x / UNIT_WIDTH, currentPos.y / UNIT_HEIGHT);
+}

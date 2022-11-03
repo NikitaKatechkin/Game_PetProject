@@ -65,7 +65,7 @@ void Game::run(const WindowContext& context)
         m_window->handleEvents(eventQueue);
         this->handleEvents(eventQueue);
         player.handleEvents(eventQueue);
-        camera.updateFOV(player.getPosition());
+        camera.updateFOV(player.getUnitPosition());
 
         // Rendering stuff
         m_window->clear();
